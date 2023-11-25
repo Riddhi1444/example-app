@@ -1,9 +1,21 @@
 <?php
+
+/**
+ * Generates the Fibonacci sequence up to a specified number of terms.
+ *
+ * @param int $n The number of terms in the sequence.
+ * @return array The Fibonacci sequence.
+ */
 function generateFibonacci($n) {
     $fibonacciSequence = array();
-    $fibonacciSequence[0] = 0;
-    $fibonacciSequence[1] = 1;
 
+    // Handle the first two terms
+    $fibonacciSequence[] = 0;
+    if ($n > 1) {
+        $fibonacciSequence[] = 1;
+    }
+
+    // Generate the rest of the sequence
     for ($i = 2; $i < $n; $i++) {
         $fibonacciSequence[$i] = $fibonacciSequence[$i - 1] + $fibonacciSequence[$i - 2];
     }
@@ -11,13 +23,16 @@ function generateFibonacci($n) {
     return $fibonacciSequence;
 }
 
-// Specify the number of terms you want in the sequence
+// Example usage:
+
+// Specify the number of terms in the Fibonacci sequence
 $numberOfTerms = 10;
 
-// Generate and display the Fibonacci sequence
+// Generate the Fibonacci sequence
 $fibonacciSequence = generateFibonacci($numberOfTerms);
 
+// Display the Fibonacci sequence
 echo "Fibonacci Sequence (first $numberOfTerms terms): ";
-echo implode(", ", $fibonacciSequence);
-?>
+echo implode(", ", $fibonacciSequence) . "\n";
+
 
