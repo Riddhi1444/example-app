@@ -1,26 +1,29 @@
 <?php
 
-// Function to swap two numbers
+/**
+ * Swaps the values of two variables.
+ *
+ * @param mixed $a The first variable.
+ * @param mixed $b The second variable.
+ * @return void
+ */
 function swapNumbers(&$a, &$b) {
     $temp = $a;
     $a = $b;
     $b = $temp;
 }
 
-// Example usage
+// Example usage:
+
+// Initial values
 $number1 = 5;
 $number2 = 10;
 
-echo "Before swapping: \n";
-echo "Number 1: " . $number1 . "\n";
-echo "Number 2: " . $number2 . "\n";
+echo "Before swapping: Number 1 = $number1, Number 2 = $number2\n";
 
-// Call the swap function
+// Swap the numbers
 swapNumbers($number1, $number2);
 
-echo "After swapping: \n";
-echo "Number 1: " . $number1 . "\n";
-echo "Number 2: " . $number2 . "\n";
+echo "After swapping: Number 1 = $number1, Number 2 = $number2\n";
 
-?>
 
