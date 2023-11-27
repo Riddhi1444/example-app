@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Songs</title>
-</head>
+<html>
+<title>Songs Page</title>
 <body>
-    <h2>Songs</h2>
+<h2>Song - Blade Template</h2>
 
-    <table border='1'>
-        <tr>
-            <th>Title</th>
-            <th>Artist</th>
-        </tr>
-        @foreach ($songs as $song)
-        <tr>
-            <td>{{ $song -> getTitle() }}</td>
-            <td>{{ $song -> getArtist() }}</td>
-        </tr>
-        @endforeach
-    </table>    
-    
+<table>
+<tr>
+<th>Title</th>
+<th>Artist</th>
+</tr>
+@foreach ($songs as $song)
+<tr>
+<td>{{ $song->title }}</td>
+<td>{{ $song->artist }}</td>
+</tr>
+@endforeach
+</table>
 </body>
 </html>
