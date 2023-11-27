@@ -10,12 +10,12 @@ class Song {
     private $tempo;
 
     // Constructor
-    public function __construct($title, $artist, $genre, $tempo) {
-        $this->setTitle($title);
-        $this->setArtist($artist);
-        $this->setGenre($genre);
-        $this->setTempo($tempo);
-    }
+    // public function __construct($title, $artist, $genre, $tempo) {
+    //     $this->setTitle($title);
+    //     $this->setArtist($artist);
+    //     $this->setGenre($genre);
+    //     $this->setTempo($tempo);
+    // }
 
     // Getter and Setter for Title
     public function getTitle() {
@@ -58,8 +58,8 @@ class Song {
 }
 
 // Usage example
-$song = new Song("Song Title", "Artist Name", "Pop", 120);
-echo "Title: " . $song->getTitle() . "\n";
-echo "Artist: " . $song->getArtist() . "\n";
-echo "Genre: " . $song->getGenre() . "\n";
-echo "Tempo: " . $song->getTempo() . "\n";
+// $song = new Song("Song Title", "Artist Name", "Pop", 120);
+// echo "Title: " . $song->getTitle() . "\n";
+// echo "Artist: " . $song->getArtist() . "\n";
+// echo "Genre: " . $song->getGenre() . "\n";
+// echo "Tempo: " . $song->getTempo() . "\n";
