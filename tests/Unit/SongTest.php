@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use PHPUnit\Framework\TestCase;
 
 require(__DIR__.'/../../practicals/Song.php');
-use songs\Song;
+use Practicals\Song;
 
 class SongTest extends TestCase
 {
@@ -35,8 +35,6 @@ class SongTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $song->setTempo(60.5);
     }
-    
-
 
     // Add other test methods for your different cases
 }
