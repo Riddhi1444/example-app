@@ -1,129 +1,65 @@
 <?php
 
-/**
- * Class Song represents a music song with properties like title, artist, genre, and tempo.
- */
+namespace songs;
+
 class Song {
-    /**
-     * @var string The title of the song.
-     */
+    // Properties
     private $title;
-
-    /**
-     * @var string The artist of the song.
-     */
     private $artist;
-
-    /**
-     * @var string The genre of the song.
-     */
     private $genre;
-
-    /**
-     * @var string The tempo of the song.
-     */
     private $tempo;
 
-    /**
-     * Song constructor.
-     *
-     * @param string $title  The title of the song.
-     * @param string $artist The artist of the song.
-     * @param string $genre  The genre of the song.
-     * @param string $tempo  The tempo of the song.
-     */
+    // Constructor
     public function __construct($title, $artist, $genre, $tempo) {
-        $this->title = $title;
-        $this->artist = $artist;
-        $this->genre = $genre;
-        $this->tempo = $tempo;
+        $this->setTitle($title);
+        $this->setArtist($artist);
+        $this->setGenre($genre);
+        $this->setTempo($tempo);
     }
 
-    /**
-     * Get the title of the song.
-     *
-     * @return string The title of the song.
-     */
+    // Getter and Setter for Title
     public function getTitle() {
         return $this->title;
     }
 
-    /**
-     * Set the title of the song.
-     *
-     * @param string $title The title of the song.
-     */
     public function setTitle($title) {
         $this->title = $title;
     }
 
-    /**
-     * Get the artist of the song.
-     *
-     * @return string The artist of the song.
-     */
+    // Getter and Setter for Artist
     public function getArtist() {
         return $this->artist;
     }
 
-    /**
-     * Set the artist of the song.
-     *
-     * @param string $artist The artist of the song.
-     */
     public function setArtist($artist) {
         $this->artist = $artist;
     }
 
-    /**
-     * Get the genre of the song.
-     *
-     * @return string The genre of the song.
-     */
+    // Getter and Setter for Genre
     public function getGenre() {
         return $this->genre;
     }
 
-    /**
-     * Set the genre of the song.
-     *
-     * @param string $genre The genre of the song.
-     */
     public function setGenre($genre) {
         $this->genre = $genre;
     }
 
-    /**
-     * Get the tempo of the song.
-     *
-     * @return string The tempo of the song.
-     */
+    // Getter and Setter for Tempo
     public function getTempo() {
         return $this->tempo;
     }
 
-    /**
-     * Set the tempo of the song.
-     *
-     * @param string $tempo The tempo of the song.
-     */
     public function setTempo($tempo) {
+        if (!is_numeric($tempo) || is_float($tempo)) {
+            throw new \InvalidArgumentException("inputs must be numeric.");
+        }
         $this->tempo = $tempo;
     }
 }
 
-// Example usage:
-
-// Create a new Song instance
-$mySong = new Song("Wonderful Tonight", "Eric Clapton", "Blues", "Slow");
-
-// Get and display song details
-echo "Title: " . $mySong->getTitle() . PHP_EOL;
-echo "Artist: " . $mySong->getArtist() . PHP_EOL;
-echo "Genre: " . $mySong->getGenre() . PHP_EOL;
-echo "Tempo: " . $mySong->getTempo() . PHP_EOL;
-
-// Update the song title and display the updated title
-$mySong->setTitle("Tears in Heaven");
-echo "Updated Title: " . $mySong->getTitle() . PHP_EOL;
-
+// Usage example
+$song = new Song("Song Title", "Artist Name", "Pop", 120);
+echo "Title: " . $song->getTitle() . "\n";
+echo "Artist: " . $song->getArtist() . "\n";
+echo "Genre: " . $song->getGenre() . "\n";
+echo "Tempo: " . $song->getTempo() . "\n";

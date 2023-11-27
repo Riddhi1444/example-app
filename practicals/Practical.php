@@ -1,35 +1,43 @@
 <?php
+
 namespace practicals;
 
 class Practical {
-    /**
-     * Function to print "Hello, World!"
-     */
+    //Prints "Hello, World!" to the standard output.
     public static function printHello() {
-        echo "Hello, World!\n";
+        echo "Hello, World!";
     }
 
-    /**
-     * Function to add two numbers
-     * @param int $num1 The first number
-     * @param int $num2 The second number
-     * @return int The sum of the two numbers
-     */
+ 
+    //Takes two numbers as arguments and returns their sum.
+     
     public static function add($num1, $num2) {
+        if (!is_numeric($num1) || !is_numeric($num2)) {
+            throw new \InvalidArgumentException("Both inputs must be numeric.");
+        }
         return $num1 + $num2;
     }
 
-    /**
-     * Function to generate a Fibonacci sequence
-     * @param int $n The number of elements in the Fibonacci sequence
-     * @return array An array containing the Fibonacci sequence
-     */
+    
+     //Takes an integer 'n' as an argument and returns an array of
     public static function generateFibonacciSequence($n) {
-        $fibonacciSequence = [0, 1];
-        for ($i = 2; $i < $n; $i++) {
-            $fibonacciSequence[$i] = $fibonacciSequence[$i - 1] + $fibonacciSequence[$i - 2];
+        if (!is_int($n)) {
+            throw new \InvalidArgumentException("Inputs must be Integer.");
         }
-        return $fibonacciSequence;
+        $fibSequence = array();
+        if ($n > 0) {
+            $a = 0;
+            $b = 1;
+            for ($i = 0; $i < $n; $i++) {
+                $fibSequence[] = $a;
+                $temp = $a;
+                $a = $b;
+                $b = $temp + $b;
+            }
+        }
+        return $fibSequence;
     }
 }
+
+
 ?>
