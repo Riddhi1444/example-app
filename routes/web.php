@@ -27,10 +27,13 @@ Route::get('/veggies', function () {
     return view('table');
 });
 Route::get('/songs_static', function () {
-    
-  
     return view('songs_static'); 
   });
+  Route::get('/playlists/{playlistId}', function (string $playlistId) {
+    return view('playlist', ['songs' => Song::all(), 'playlistId' => $playlistId ]);
+  });
+
+  
 
 
   Route::get('/songs', function () {

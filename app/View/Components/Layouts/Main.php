@@ -14,7 +14,7 @@ class Main extends Component
     public string $pageName;
     public function __construct(string $pageName = '') {
         $this->pageName = $pageName;
-      }
+    }
 
     /**
      * Get the view / contents that represent the component.
