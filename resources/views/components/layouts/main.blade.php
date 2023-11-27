@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlist Viewer</title>
+    <title>{{ $title ?? "Cool Web App" }}</title>
     <link href="{{ asset('css/layout/main.css') }}" rel="stylesheet" />
 </head>
 <body>
@@ -21,35 +21,7 @@
         <div class="playlist-item">Playlist 2</div>
     </sidebar>
 
-    <main>
-        <table>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Title</th>
-                    <th>Artists</th>
-                    <th>Album</th>
-                    <th>Duration</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Song 1</td>
-                    <td>Artist 1</td>
-                    <td>Album 1</td>
-                    <td>3:30</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Song 2</td>
-                    <td>Artist 2</td>
-                    <td>Album 2</td>
-                    <td>4:15</td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
+    @yield('content')
 
     <footer>
         <p>&copy; 2023 Playlist Viewer | <a href="#">About</a> | <a href="#">Privacy</a></p>
